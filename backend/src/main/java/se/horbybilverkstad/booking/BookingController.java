@@ -25,7 +25,7 @@ public class BookingController {
 
   @PostMapping
   public ResponseEntity<Booking> create(@Valid @RequestBody BookingRequest request) {
-    Booking booking = repository.save(Booking.from(request));
+    Booking booking = repository.save(request);
     return ResponseEntity
         .created(URI.create("/api/bookings/" + booking.id()))
         .body(booking);

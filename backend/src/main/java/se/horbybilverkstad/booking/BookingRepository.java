@@ -1,25 +1,34 @@
 package se.horbybilverkstad.booking;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class BookingRepository {
-  private final List<Booking> bookings = new ArrayList<>();
+  private final SpringDataBookingRepository repository;
 
-  public synchronized Booking save(Booking booking) {
-    bookings.add(booking);
-    return booking;
+  public BookingRepository(SpringDataBookingRepository repository) {
+    this.repository = repository;
   }
 
-  public synchronized List<Booking> findAll() {
-    return List.copyOf(bookings);
+  public Booking save(BookingRequest request) {
+    return repository.save(BookingEntity.from(request)).toBooking();
   }
 
-  public synchronized Optional<Booking> findById(UUID id) {
-    return bookings.stream().filter(booking -> booking.id().equals(id)).findFirst();
+  public List<Booking> findAll() {
+    return repository.findAllByOrderByCreatedAtDesc().stream()
+        .map(BookingEntity::toBooking)
+        .toList();
   }
+
+  public Optional<Booking> findById(UUID id) {
+    return repository.findById(id).map(BookingEntity::toBooking);
+  }
+}
+
+interface SpringDataBookingRepository extends JpaRepository<BookingEntity, UUID> {
+  List<BookingEntity> findAllByOrderByCreatedAtDesc();
 }
