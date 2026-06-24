@@ -117,7 +117,7 @@ export default function BilverkstadHorbyPreview() {
               </p>
 
               <div className="hero-actions">
-                <LinkButton href="tel:0415123456" variant="secondary" className="large-button">
+                <LinkButton href="tel:0702457944" variant="secondary" className="large-button">
                   <Icon type="phone" /> Ring nu
                 </LinkButton>
               </div>
@@ -169,7 +169,7 @@ export default function BilverkstadHorbyPreview() {
                 <p className="section-label">Tjänster</p>
                 <h2>Vanliga verkstadsjobb</h2>
               </div>
-              <LinkButton href="tel:0415123456">
+              <LinkButton href="tel:0702457944">
                 <Icon type="phone" /> Ring verkstaden
               </LinkButton>
             </div>
