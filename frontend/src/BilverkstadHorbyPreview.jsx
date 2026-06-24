@@ -1,14 +1,33 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Car, CheckCircle2, Clock, MapPin, Menu, Phone, ShieldCheck, Wrench, X } from "lucide-react";
+import logoUrl from "./assets/logga.png";
 
 const services = [
-  "Service & oljebyte",
-  "Bromsar",
-  "Däckbyte",
-  "Felsökning",
-  "AC-service",
-  "Besiktningsfix"
+  {
+    title: "Service & oljebyte",
+    description: "Regelbunden service med oljebyte, filterkontroll och genomgång så bilen fortsätter gå tryggt."
+  },
+  {
+    title: "Bromsar",
+    description: "Låter bromsarna, tar pedalen konstigt eller känns bilen osäker? Vi kontrollerar och byter det som behövs."
+  },
+  {
+    title: "Däckbyte",
+    description: "Vi hjälper dig byta mellan sommar- och vinterdäck och ser samtidigt över mönsterdjup och skick."
+  },
+  {
+    title: "Felsökning",
+    description: "Lyser en varningslampa eller beter sig bilen konstigt? Vi felsöker och förklarar vad som behöver göras."
+  },
+  {
+    title: "AC-service",
+    description: "Dålig kyla eller imma i bilen? Vi kontrollerar AC-systemet och hjälper till med service."
+  },
+  {
+    title: "Besiktningsfix",
+    description: "Snart besiktning? Vi fixar det som behöver åtgärdas så bilen har bättre chans att gå igenom."
+  }
 ];
 
 const icons = {
@@ -48,13 +67,7 @@ export default function BilverkstadHorbyPreview() {
       <header className="site-header">
         <div className="header-inner">
           <div className="brand">
-            <div className="brand-mark">
-              <Icon type="wrench" />
-            </div>
-            <div>
-              <p className="brand-name">Hörby Bilverkstad</p>
-              <p className="brand-subtitle">Service nära dig</p>
-            </div>
+            <img className="brand-logo" src={logoUrl} alt="Hörby Bilverkstad" />
           </div>
 
           <nav className="desktop-nav">
@@ -62,7 +75,7 @@ export default function BilverkstadHorbyPreview() {
             <a href="#kontakt">Kontakt</a>
           </nav>
 
-          <LinkButton className="desktop-call" href="tel:0415123456">
+          <LinkButton className="desktop-call" href="tel:0702457944">
             <Icon type="phone" /> Ring nu
           </LinkButton>
 
@@ -75,7 +88,7 @@ export default function BilverkstadHorbyPreview() {
           <div className="mobile-menu">
             <a href="#tjanster">Tjänster</a>
             <a href="#kontakt">Kontakt</a>
-            <LinkButton href="tel:0415123456">
+            <LinkButton href="tel:0702457944">
               <Icon type="phone" /> Ring verkstaden
             </LinkButton>
           </div>
@@ -128,8 +141,8 @@ export default function BilverkstadHorbyPreview() {
                   </div>
                   <h2>Akut hjälp?</h2>
                   <p>Ring oss direkt om bilen inte startar, varningslampor lyser eller du behöver snabb felsökning.</p>
-                  <LinkButton href="tel:0415123456" variant="light" className="full-width">
-                    <Icon type="phone" /> 0415-123 456
+                  <LinkButton href="tel:0702457944" variant="light" className="full-width">
+                    <Icon type="phone" /> 0702457944
                   </LinkButton>
                 </div>
                 <div className="emergency-meta">
@@ -162,12 +175,12 @@ export default function BilverkstadHorbyPreview() {
             </div>
             <div className="service-grid">
               {services.map((service) => (
-                <Card key={service} className="service-card">
+                <Card key={service.title} className="service-card">
                   <div className="service-icon">
                     <Icon type="wrench" />
                   </div>
-                  <h3>{service}</h3>
-                  <p>Ring oss så kontrollerar vi bilen och hjälper dig vidare med tydlig offert.</p>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
                 </Card>
               ))}
             </div>
@@ -179,21 +192,20 @@ export default function BilverkstadHorbyPreview() {
             <div>
               <p className="section-label">Kontakt</p>
               <h2>Kom förbi eller ring direkt</h2>
-              <p>Exempeladress i Hörby. Byt ut adress och telefonnummer när riktiga uppgifter finns.</p>
             </div>
             <div className="contact-links">
-              <a href="tel:0415123456">
+              <a href="tel:0702457944">
                 <Icon type="phone" />
                 <span>
                   <small>Ring verkstaden</small>
-                  <strong>0415-123 456</strong>
+                  <strong>0702457944</strong>
                 </span>
               </a>
               <div>
                 <Icon type="pin" />
                 <span>
                   <small>Adress</small>
-                  <strong>Verkstadsgatan 1, Hörby</strong>
+                  <strong>Silvergatan 15, Hörby</strong>
                 </span>
               </div>
             </div>

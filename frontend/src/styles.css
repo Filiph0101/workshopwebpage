@@ -61,10 +61,8 @@ input {
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
 }
 
-.brand-mark,
 .big-icon {
   display: grid;
   place-items: center;
@@ -72,29 +70,11 @@ input {
   background: #09090b;
 }
 
-.brand-mark {
-  height: 2.75rem;
-  width: 2.75rem;
-  border-radius: 0.75rem;
-}
-
-.brand-mark .icon {
-  height: 1.5rem;
-  width: 1.5rem;
-}
-
-.brand-name {
-  margin: 0;
-  font-size: 1.125rem;
-  font-weight: 900;
-  line-height: 1.1;
-}
-
-.brand-subtitle {
-  margin: 0.125rem 0 0;
-  color: #71717a;
-  font-size: 0.75rem;
-  font-weight: 700;
+.brand-logo {
+  display: block;
+  height: 3.2rem;
+  max-width: min(18rem, 52vw);
+  object-fit: contain;
 }
 
 .desktop-nav {
@@ -463,6 +443,11 @@ input {
 }
 
 @media (max-width: 620px) {
+  .brand-logo {
+    height: 2.5rem;
+    max-width: 12.5rem;
+  }
+
   .hero-actions,
   .trust-row,
   .service-grid {
