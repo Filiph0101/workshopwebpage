@@ -1,0 +1,138 @@
+.site-header {
+  width: 100%;
+  height: 72px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 260px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-logo img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.logo-title,
+.logo-subtitle {
+  display: block;
+  margin-left: 0;
+  padding-left: 0;
+  text-align: left;
+}
+
+.logo-title {
+  color: #12284a;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.logo-subtitle {
+  color: #12284a;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  margin-top: 3px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.header-nav a {
+  position: relative;
+  color: #111111;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 27px 0 25px;
+}
+
+.header-nav a:hover,
+.header-nav a.active {
+  color: #000000;
+}
+
+.header-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 17px;
+  height: 2px;
+  background: #f15a24;
+  border-radius: 999px;
+}
+
+.header-phone {
+  min-width: 170px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 9px;
+  color: #111111;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.phone-icon {
+  color: #f15a24;
+  width: 17px;
+  height: 17px;
+  stroke-width: 2.3;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    height: auto;
+    padding: 18px 22px;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .header-logo,
+  .header-phone {
+    min-width: auto;
+  }
+
+  .header-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .header-nav a {
+    padding: 8px 0;
+  }
+
+  .header-nav a.active::after {
+    bottom: 0;
+  }
+}

@@ -1,0 +1,174 @@
+.contact-section {
+  background: #ffffff;
+  padding: 0 46px 56px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact-card {
+  max-width: 1370px;
+  min-height: 300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 1.35fr 0.88fr;
+  border: 1px solid #d9e0ea;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.contact-info {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.08), transparent 34%),
+    linear-gradient(135deg, #082141 0%, #10284d 100%);
+  color: #ffffff;
+  padding: 34px 42px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.contact-eyebrow,
+.hours-eyebrow {
+  display: block;
+  color: #f15a24;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.contact-info h2 {
+  margin: 0 0 24px;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  text-align: left;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.contact-item svg {
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  color: #ffffff;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.contact-map {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  background: #eef2f5;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  border: 0;
+  display: block;
+}
+
+.contact-hours {
+  padding: 32px 42px 30px;
+  box-sizing: border-box;
+  background: #ffffff;
+  text-align: left;
+}
+
+.hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.hours-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: #1f2f46;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.hours-row strong {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+  white-space: nowrap;
+}
+
+.contact-book-button {
+  height: 50px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  border-radius: 5px;
+  background: #f15a24;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 10px 22px rgba(241, 90, 36, 0.18);
+}
+
+.contact-book-button svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.2;
+}
+
+@media (max-width: 1050px) {
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info,
+  .contact-hours {
+    padding: 34px 30px;
+  }
+
+  .contact-map,
+  .contact-map iframe {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-section {
+    padding: 0 24px 48px;
+  }
+
+  .contact-info h2 {
+    font-size: 26px;
+  }
+
+  .hours-row,
+  .hours-row strong {
+    font-size: 14px;
+  }
+}
