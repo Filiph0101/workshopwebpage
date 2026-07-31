@@ -26,7 +26,7 @@ function Hero() {
         </p>
 
         <div className="hero-actions">
-          <a href="tel:041512345" className="hero-button primary">
+          <a href="tel:0702457944" className="hero-button primary">
             <FiPhoneCall />
             <span>Ring oss</span>
           </a>
